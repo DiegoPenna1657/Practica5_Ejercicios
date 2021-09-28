@@ -1,0 +1,65 @@
+<!DOCTYPE HTML!>
+<html>
+<head>
+	<meta content= "text/html; charset= UTF-8" http-equiv="Content-type">
+	<title>Formulario</title>
+	<meta content="Diego" name="author">
+	<meta content="BlueGriffon wysiwyg editor" name="generator">
+	<script language= "JavaScript">
+		function enfocado(id_objeto) {
+		document.getElementById(id_objeto).style.border="2px solid red";
+		}
+		function desenfocado(id_objeto) {
+		document.getElementById(id_objeto).style.border="inherit";
+		}
+	</script>
+</head>
+<body>
+	<form action="mailto:72095374@ucsm.edu.pe"method="post"enctype="text/plain">
+	<h1>Bienvenido empleado</h1>
+<fieldset>
+<legend>Datos personales</legend>
+	Introduce tu Nombre: <input name="nombre" id="nombre" type="text" onfocus="javascript:enfocado(this.id);" onblur="javascript:desenfocado(this.id);"><br>
+	<br />
+	Introduce tu Dni:    <input name="DNI" id="DNI" type="text" onfocus="javascript:enfocado(this.id);" onblur="javascript:desenfocado(this.id);"><br>
+	<br />
+	Introduce tu Correo: <input name="correo" id="correo" type="text" onfocus="javascript:enfocado(this.id);" onblur="javascript:desenfocado(this.id);"><br>
+</fieldset>
+<br />
+<hr />
+Escoja su puesto:
+<select id="puesto" name="puesto" onchange="Sueldo();">
+<option value="Gerente">Gerente</option>
+<option value="Administrador">Administrador</option>
+<option value="Cajero">Cajero</option>
+</select>
+<br><br />
+<script language= "JavaScript">
+function sumar (valor) {
+    var total = 0;	
+    valor = parseInt(valor); // Convertir el valor a un entero (número).
+	
+    total = document.getElementById('spTotal').innerHTML;
+	
+    // Aquí valido si hay un valor previo, si no hay datos, le pongo un cero "0".
+    total = (total == null || total == undefined || total == "") ? 0 : total;
+	
+    /* Esta es la suma. */
+    total = (parseInt(total) + parseInt(valor)*70);
+	
+    // Colocar el resultado de la suma en el control "span".
+    document.getElementById('spTotal').innerHTML = total;
+}
+</script>
+<span>Horas trabajadas a lo largo del dia</span>
+<input type="text" id="txt_campo_1" onchange="sumar(this.value);" />
+<br/ >
+<span>Dias trabajados a lo largo del mes</span>
+<input type="text" id="txt_campo_2" onchange="sumar(this.value);" />
+<br/ >
+<br/ >
+<span>El Sueldo es: </span> <span id="spTotal"></span>
+<hr />
+<input type="submit" value="Haz clic para enviar la informaci&oacute;n" />
+</body>
+</hmtl>

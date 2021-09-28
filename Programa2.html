@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<ul>
+<li id="p1" style="color:red">  </li>
+
+<li id="p2" style="color:blue">  </li>
+
+<li id="p3" style="color:green"> </li>
+</ul>
+
+
+<button type="button" onclick="agregar()">Agregar</button>
+<button type="button" onclick="borrar()">borrar</button>
+
+<script>
+function agregar() {
+document.getElementById("p1").innerHTML = "P1";
+document.getElementById("p2").innerHTML = "P2";
+document.getElementById("p3").innerHTML = "P3";
+}
+function borrar() {
+document.getElementById("p1").innerHTML = "";
+document.getElementById("p2").innerHTML = "";
+document.getElementById("p3").innerHTML = "";
+}
+</script>
+</body>
+</html>
